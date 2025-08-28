@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="Appetito.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=UnifrakturMaguntia&family=Zen+Kurenaido&family=Zen+Maru+Gothic&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zen+Maru+Gothic:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap');
+    </style>
+    
+    <title>Buon Appetito義式餐廳</title>
+</head>
+
+<body onpageshow="bodyInitAppetito()">
+    <div style="border: 15px rgb(195, 36, 36) solid;">
+        <h1 class="menu_title">Menu</h1>
+
+<!-- 購物車商品數與總價 -->
+    <div class="numbers_in_cart">
+        <p id="how_many">餐點數量：</p><p id="cart-num">0</p>
+    </div>
+
+    <div class="totalPrice">
+        <h4><b>&loz;總價是: $<span id="show-total-cart"></span>元</b></h4>
+    </div>
+
+    <button class="dishes_chosen" onmousemove="displayChosen()" onmouseout="disappear()">已有<br>品項</button>
+    <ul id="show-dishes-chosen"></ul>
+<!-- 前菜 -->
+ <div class="entree">
+    <h6 class="entree_title">&clubs;前菜 Entrée</h6>
+    <ul class="flex_container">
+    <br>
+        <li>
+            <div class="block">
+                <img src="img/蕃茄起司沙拉.jpg">
+            </div>
+            <br>
+            <p class="tomato_salad">蕃茄起司沙拉</p>
+                <div class="price_now">NT$100</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+           
+            <button type="button" class="btn_btn-dark_detail" name="蕃茄起司沙拉" price="100" id="product_0">放入購物車</button>
+        </li>
+        
+        <li>
+        <div class="block">
+            <img src="img/佛卡夏麵包.jpg">
+        </div>
+        <br>
+        <p class="focaccia">佛卡夏麵包</p>
+            <div class="price_now">NT$110</div>
+                <br>
+                <div class="buy-num-row">
+                    <select class="buy-num">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="佛卡夏麵包" price="110" id="product_1">放入購物車</button>
+        </li>
+        
+            <li>
+        <div class="block">
+            <img src="img/炸魷魚.jpg">
+        </div>
+        <br>
+        <p class="fried_calamari">炸魷魚</p>
+            <div class="price_now">NT$110</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="炸魷魚" price="110" id="product_2">放入購物車</button>
+            </li>
+        </ul>
+</div>
+        
+<!-- 義大利麵 -->
+<div class="pasta">
+    <h6 class="pasta_title">&clubs;義大利麵 Pasta</h6>
+        <ul class="flex_container2">
+            <li>
+        <div class="block">
+            <img src="img/番茄肉醬義大利麵.jpg">
+        </div>
+        <br>
+        <p class="tomato_spaghetti">番茄肉醬義大利麵</p>
+        <div class="price_now">NT$300</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="番茄肉醬義大利麵" price="300" id="product_3">放入購物車</button>
+            </li>
+                
+            <li>
+        <div class="block">
+            <img src="img/奶油培根麵.jpg">
+        </div>
+        <br>
+        <p class="cream_bacon">奶油培根麵</p>
+        <div class="price_now">NT$300</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="奶油培根麵" price="300" id="product_4">放入購物車</button>
+            </li>
+        
+            <li>
+        <div class="block">
+            <img src="img/肉醬千層麵.jpg">
+        </div>
+        <br>
+        <p class="tomato_lasagna">肉醬千層麵</p>
+        <div class="price_now">NT$350</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="肉醬千層麵" price="350" id="product_5">放入購物車</button>
+            </li>
+        
+            <li>
+        <div class="block">
+            <img src="img/辣味奶油蝦仁雞肉麵.jpg">
+        </div>
+        <br>
+        <p class="spicy_SC">辣味奶油蝦仁雞肉麵</p>
+        <div class="price_now">NT$400</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="辣味奶油蝦仁雞肉麵" price="400" id="product_6">放入購物車</button>
+        </li>
+
+        <li>
+            <div class="block">
+                <img src="img/青醬管麵.jpg">
+            </div>
+            <br>
+            <p class="pesto">青醬管麵</p>
+            <div class="price_now">NT$300</div>
+                <br>
+                <div class="buy-num-row">
+                    <select class="buy-num">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button type="button" class="btn_btn-dark_detail" name="青醬管麵" price="300" id="product_7">放入購物車</button>
+        </li>
+
+        <li>
+            <div class="block">
+                <img src="img/馬鈴薯麵疙瘩.jpg">
+            </div>
+            <br>
+            <p class="potato_gnocchi">馬鈴薯麵疙瘩</p>
+            <div class="price_now">NT$300</div>
+                <br>
+                <div class="buy-num-row">
+                    <select class="buy-num">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button type="button" class="btn_btn-dark_detail" name="馬鈴薯麵疙瘩" price="300" id="product_8">放入購物車</button>
+        </li>
+    </ul>
+</div>
+
+<!-- 披薩 -->
+<div class="pizza">
+    <h6 class="pizza_title">&clubs;披薩 Pizza</h6>
+        <ul class="flex_container2">
+            <li>
+        <div class="block">
+            <img src="img/瑪格麗特披薩.jpg">
+        </div>
+        <br>
+        <p class="margherita">瑪格麗特披薩</p>
+        <div class="price_now">NT$300</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="瑪格麗特披薩" price="300" id="product_9">放入購物車</button>
+            </li>
+                
+            <li>
+        <div class="block">
+            <img src="img/奶油海鮮披薩.jpg">
+        </div>
+        <br>
+        <p class="cream_seafood">奶油海鮮披薩</p>
+        <div class="price_now">NT$400</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="奶油海鮮披薩" price="400" id="product_10">放入購物車</button>
+            </li>
+        
+            <li>
+        <div class="block">
+            <img src="img/火腿披薩.jpg">
+        </div>
+        <br>
+        <p class="ham_pizza">火腿披薩</p>
+        <div class="price_now">NT$300</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="火腿披薩" price="300" id="product_11">放入購物車</button>
+            </li>
+        
+            <li>
+        <div class="block">
+            <img src="img/臘腸披薩.jpg">
+        </div>
+        <br>
+        <p class="pepperoni">臘腸披薩</p>
+        <div class="price_now">NT$300</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="臘腸披薩" price="300" id="product_12">放入購物車</button>
+        </li>
+
+        <li>
+            <div class="block">
+                <img src="img/蕈菇披薩.jpg">
+            </div>
+            <br>
+            <p class="mushroom_pizza">蕈菇披薩</p>
+            <div class="price_now">NT$350</div>
+                <br>
+                <div class="buy-num-row">
+                    <select class="buy-num">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button type="button" class="btn_btn-dark_detail" name="蕈菇披薩" price="350" id="product_13">放入購物車</button>
+        </li>
+
+        <li>
+            <div class="block">
+                <img src="img/起司通心粉披薩.jpg">
+            </div>
+            <br>
+            <p class="macCheese_pizza">起司通心粉披薩</p>
+            <div class="price_now">NT$200</div>
+                <br>
+                <div class="buy-num-row">
+                    <select class="buy-num">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button type="button" class="btn_btn-dark_detail" name="起司通心粉披薩" price="200" id="product_14">放入購物車</button>
+        </li>
+    </ul>
+</div>
+
+<!-- 湯品 -->
+<div class="soup">
+    <h6 class="soup_title">&clubs;湯品 Soup</h6>
+        <ul class="flex_container3">
+            <li>
+        <div class="block">
+            <img src="img/玉米濃湯.jpg">
+        </div>
+        <br>
+        <p class="corn_soup">玉米濃湯</p>
+        <div class="price_now">NT$50</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="玉米濃湯" price="50" id="product_15">放入購物車</button>
+            </li>
+                
+            <li>
+        <div class="block">
+            <img src="img/蘑菇濃湯.jpg">
+        </div>
+        <br>
+        <p class="mushroom_soup">蘑菇濃湯</p>
+        <div class="price_now">NT$50</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="蘑菇濃湯" price="50" id="product_16">放入購物車</button>
+            </li>
+    </ul>
+</div>
+
+<!-- 飲料 -->
+<div class="drinks">
+    <h6 class="drinks_title">&clubs;飲料 Drinks</h6>
+        <ul class="flex_container2">
+            <li>
+        <div class="block">
+            <img src="img/可口可樂.jpg">
+        </div>
+        <br>
+        <p class="coke">可口可樂</p>
+        <div class="price_now">NT$20</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="可口可樂" price="20" id="product_17">放入購物車</button>
+            </li>
+                
+            <li>
+        <div class="block">
+            <img src="img/可口可樂Zero.jpg">
+        </div>
+        <br>
+        <p class="coke_zero">可口可樂Zero</p>
+        <div class="price_now">NT$20</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="可口可樂Zero" price="20" id="product_18">放入購物車</button>
+            </li>
+        
+            <li>
+        <div class="block">
+            <img src="img/雪碧.jpg">
+        </div>
+        <br>
+        <p class="sprite">雪碧</p>
+        <div class="price_now">NT$20</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="雪碧" price="20" id="product_19">放入購物車</button>
+            </li>
+        
+            <li>
+        <div class="block">
+            <img src="img/巧克力奶昔.jpg">
+        </div>
+        <br>
+        <p class="chocolate_shake">巧克力奶昔</p>
+        <div class="price_now">NT$30</div>
+            <br>
+            <div class="buy-num-row">
+                <select class="buy-num">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <button type="button" class="btn_btn-dark_detail" name="巧克力奶昔" price="30" id="product_20">放入購物車</button>
+        </li>
+
+        <li>
+            <div class="block">
+                <img src="img/草莓奶昔.jpg">
+            </div>
+            <br>
+            <p class="strawberry_shake">草莓奶昔</p>
+            <div class="price_now">NT$30</div>
+                <br>
+                <div class="buy-num-row">
+                    <select class="buy-num">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button type="button" class="btn_btn-dark_detail" name="草莓奶昔" price="30" id="product_21">放入購物車</button>
+        </li>
+
+        <li>
+            <div class="block">
+                <img src="img/香草奶昔.jpg">
+            </div>
+            <br>
+            <p class="vanilla_shake">香草奶昔</p>
+            <div class="price_now">NT$30</div>
+                <br>
+                <div class="buy-num-row">
+                    <select class="buy-num">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button type="button" class="btn_btn-dark_detail" name="香草奶昔" price="30" id="product_22">放入購物車</button>
+        </li>
+    </ul>
+</div>
+
+<!-- 甜點 -->
+<div class="desserts">
+    <h6 class="desserts_title">&clubs;甜點 Desserts</h6>
+    <ul class="flex_container">
+        <br>
+        <li style="margin-right: 40px; margin-top: 65px;">
+    <div class="block">
+        <div class="ice_choco"><img src="img/巧克力冰淇淋.jpg"></div>
+        <div class="ice_strawberry"><img src="img/草莓冰淇淋.jpg"></div>
+        <div class="ice_vanilla"><img src="img/香草冰淇淋.jpg"></div>
+        <div class="ice_mango"><img src="img/芒果冰淇淋.jpg"></div>
+        <div class="ice_mint"><img src="img/薄荷巧克力.jpg"></div>
+        <div class="ice_taro"><img src="img/芋頭冰淇淋.jpg"></div>
+        <div class="ice_grape"><img src="img/香檳葡萄.jpg"></div>
+        <div class="ice_matcha"><img src="img/抹茶冰淇淋.jpg"></div>
+        <div class="ice_sesame"><img src="img/芝麻冰淇淋.jpg"></div>
+        <div class="ice_coffee"><img src="img/咖啡冰淇淋.jpg"></div>
+    </div>
+    <br>
+    <p class="iceCream">冰淇淋</p>
+        <div class="price_now">NT$30</div>
+        <br>
+        <div class="flavor-row">
+            <select class="flavor" id="ice_flavor">
+                <option selected value="巧克力冰淇淋">巧克力</option>
+                <option value="草莓冰淇淋">草莓</option>
+                <option value="香草冰淇淋">香草</option>
+                <option value="芒果冰淇淋">芒果</option>
+                <option value="薄荷巧克力">薄荷巧克力</option>
+                <option value="芋頭冰淇淋">芋頭</option>
+                <option value="香檳葡萄">香檳葡萄</option>
+                <option value="抹茶冰淇淋">抹茶</option>
+                <option value="芝麻冰淇淋">芝麻</option>
+                <option value="咖啡冰淇淋">咖啡</option>
+            </select>
+        </div>
+        <div class="buy-num-row">
+            <select class="buy-num">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <button type="button" class="btn_btn-dark_detail" name="冰淇淋" price="30" id="product_23">放入購物車</button>
+        </li>
+    
+        <li>
+    <div class="block">
+        <img src="img/提拉米蘇.jpg">
+    </div>
+    <br>
+    <p class="tiramisu">提拉米蘇</p>
+        <div class="price_now">NT$50</div>
+        <br>
+        <div class="buy-num-row">
+            <select class="buy-num">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <button type="button" class="btn_btn-dark_detail" name="提拉米蘇" price="50" id="product_24">放入購物車</button>
+        </li>
+    
+        <li>
+    <div class="block">
+        <img src="img/焦糖烤布蕾.jpg">
+    </div>
+    <br>
+    <p class="creme_brulee">焦糖烤布蕾</p>
+        <div class="price_now">NT$30</div>
+        <br>
+        <div class="buy-num-row">
+            <select class="buy-num">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <button type="button" class="btn_btn-dark_detail" name="焦糖烤布蕾" price="30" id="product_25">放入購物車</button>
+        </li>
+    </ul>
+</div>
+
+    <button class="shoppingCart_button" onclick="location.href='Buon_Appetito購物車.html'">&diams;去結帳</button>
+
+    </div>
+</body>

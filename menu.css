@@ -1,0 +1,216 @@
+h1{
+    padding-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 10px;
+    font-style: normal;
+    text-align: center;
+}
+
+.menu_title{
+    color: darkred;
+    font-size: 50px;
+}
+
+h4{
+    font-family: "Kaisei Decol", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: black;
+    letter-spacing: 4px;
+}
+
+h6{
+    font-family: "Kaisei Decol", serif;
+    font-weight: 10;
+    font-style: normal;
+    font-size: 100px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 60px;
+    padding-left: 650px;
+    position: absolute;
+}
+.entree_title, .pasta_title, .pizza_title, .soup_title, .drinks_title, .desserts_title{
+    color: crimson;
+}
+
+.button {
+    vertical-align: top; 
+    position: relative fixed;
+    display: inline-block;
+    font-size: 15px;
+    color: #2e2e1f;
+    border: solid 0.5px transparent;
+    padding-top: 0.1px;
+    padding-left: 0.1px;
+    padding-right: 0.1px;
+    border-radius: 0px;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: bolder;
+    font-style: normal;
+    background-color: transparent;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    margin-top: 12px;
+    margin-bottom: 14px;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+p{
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: black;
+    text-shadow: 0.1em 0.1em 0.2em whitesmoke;
+}
+
+#how_many{
+    position: absolute; 
+    top: 20px; 
+    left: 1200px;
+}
+#cart-num{
+    position: absolute; 
+    top: 20px; 
+    left: 1300px; 
+    color: black;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+.flex_container{
+    margin: 100px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: stretch space-between;
+    padding: 40px;
+    position: relative fixed;
+    margin-top: 30px;
+    margin-left: 250px;
+    margin-right: 100px;
+}
+
+.flex_container2{
+    margin: 100px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: stretch space-between;
+    padding: 40px;
+    position: relative fixed;
+    margin-top: 30px;
+    margin-left: 250px;
+    margin-right: 100px;
+}
+
+.flex_container3{
+    margin: 100px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: stretch space-between;
+    padding: 40px;
+    position: relative fixed;
+    margin-top: 30px;
+    margin-left: 380px;
+    margin-right: 100px;
+}
+
+li{
+    margin-right: 40px; 
+    margin-top: 45px; 
+    margin-left: 45px;
+    list-style-type: none;
+}
+
+.price_now{
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 15px;
+    color: black;
+    text-shadow: 0.1em 0.1em 0.2em whitesmoke;
+}
+
+.btn_btn-dark_detail{
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    color: black;
+    background-color: transparent; 
+    margin-top: 15px;
+}
+
+#product_23{
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    color: black;
+    background-color: transparent; 
+    margin-top: 15px;
+}
+
+.shoppingCart_button{
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: darkred; 
+    color:rgb(250, 252, 231); 
+    font-size: 25px; 
+    border: transparent; 
+    margin-top: 15px; 
+    width: 200px; 
+    height: 100px; 
+    border-radius: 50px; 
+    position: relative; 
+    left: 1200px; 
+    top: -20px;
+}
+
+.totalPrice{
+    position: absolute;
+    left: 1150px;
+    top: 60px;
+    font-size: 15px;
+}
+
+.dishes_chosen{
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: darkred; 
+    color:rgb(250, 252, 231); 
+    font-size: 15px; 
+    border: transparent; 
+    margin-top: 10px; 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 80px; 
+    position: relative; 
+    left: 1000px; 
+    top: -60px;
+}
+#show-dishes-chosen{
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px; 
+    width: 200px; 
+    height: 200px; 
+    position: relative; 
+    left: 800px; 
+    top: -55px;
+}
